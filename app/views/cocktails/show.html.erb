@@ -1,0 +1,17 @@
+<h1><%= @cocktail.name %> details</h1>
+
+
+<% if @cocktail.doses.length > 0 %>
+  <h2>For this cocktail you will need :</h2>
+  <% @cocktail.doses.each do |dose| %>
+    <li><%= dose.description %> <%= dose.ingredient.name %></li>
+  <% end %>
+<% else %>
+  <p>No Ingredient yet, add some!</p>
+<% end %>
+<br>
+<br>
+<h2>Not the right cocktail name? <%= link_to "Modify!", edit_cocktail_path(@cocktail) %></h2>
+<br>
+<h3>Something's missing?<br>Add an ingredient</h3>
+<%= render 'shared/dose_form', cocktail: @cocktail %>

@@ -1,0 +1,10 @@
+<h2>Modifying <%= @cocktail.name %></h2>
+
+<h3>Currently in this cocktail :</h3>
+<% @cocktail.doses.each do |dose| %>
+  <p><%= dose.description %> <%= dose.ingredient.name %></p>
+  <br>
+<% end %>
+
+<%= render 'shared/form', cocktail: @cocktail, dose: @dose %>
+
