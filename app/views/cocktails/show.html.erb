@@ -1,6 +1,6 @@
 <h1><%= @cocktail.name %> details</h1>
 
-
+<%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
 <% if @cocktail.doses.length > 0 %>
   <h2>For this cocktail you will need :</h2>
   <% @cocktail.doses.each do |dose| %>

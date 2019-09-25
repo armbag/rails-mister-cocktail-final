@@ -4,8 +4,13 @@
 
 
 <% @cocktails.each do |cocktail| %>
+  <%= cl_image_tag cocktail.photo, height: 300, width: 400, crop: :fill %>
   <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
 <% end %>
 
+<%= cl_image_tag("n4qjholz6cysymbcp9dj",
+      width: 400, height: 300, crop: :fill) %>
 
+<%= cl_image_tag("iznl2vorelut1cdm79c2",
+      width: 190, height: 190, crop: :limit) %>
 <h2><%= link_to "Add your cocktail", new_cocktail_url %></h2>
