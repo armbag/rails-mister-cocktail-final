@@ -6,6 +6,7 @@ class CocktailsController < ApplicationController
   end
 
   def show
+    @ingredients = Ingredient.all
     @dose = Dose.new
   end
 
@@ -47,5 +48,7 @@ class CocktailsController < ApplicationController
 
   def cocktail_params
     params.require(:cocktail).permit(:name, :photo, :remote_photo_url)
+    # :remote_photo_url pour pouvoir demander un URL pour
+    # un cocktail
   end
 end

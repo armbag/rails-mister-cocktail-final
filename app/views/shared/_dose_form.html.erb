@@ -1,5 +1,15 @@
+
+<%=  "-----------------------------" %>
 <%= simple_form_for ([@cocktail, @dose]) do |f| %>
-  <%= f.association :ingredient %>
+  <%#= f.association :ingredient, input_html: { class: 'select2' } %>
+  <%= select_tag :ingredient, options_from_collection_for_select(@ingredients.map { |x| x.name } :name, :name), class: "select2" %>
+  <%#=f.association select_tag :ingredient, options_for_select(Ingredient.all.map {|x| [x.name, x.id]}), class: "select2" %>
   <%= f.input :description %>
   <%= f.button :submit, "Add dose", class: "btn btn-success" %>
 <% end %>
+
+<%#= select_tag :ingredient, options_from_cllection_for_select(Ingredient.all),
+    :name, :name),
+    class: 'select2' %>
+
+
