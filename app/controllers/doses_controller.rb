@@ -1,16 +1,21 @@
 class DosesController < ApplicationController
   before_action :set_cocktail, only: [:new, :create, :destroy]
 
+# I shouldn't need this!
   def new
     @dose = Dose.new
   end
 
   def create
     @dose = Dose.new(dose_params)
+
     @dose.cocktail = @cocktail
     if @dose.save
       redirect_to cocktail_path(@cocktail)
     else
+      puts "-----------------------------"
+      puts "DIDNT WORK ------------------"
+      puts "-----------------------------"
       render :new
     end
   end
