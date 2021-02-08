@@ -31,7 +31,7 @@ gem 'awesome_print'
 
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.9.1'
-gem 'carrierwave', '~> 1.2'
+gem 'carrierwave', '~> 1.3'
 
 
 # Reduces boot times through caching; required in config/boot.rb
